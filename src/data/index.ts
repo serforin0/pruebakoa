@@ -7,8 +7,8 @@ dotenv.config();
 //let dbname = process.env.DBNAME
 
 export const dbConn = () => {
-    const uri:string = process.env.MONGO_URI || `mongodb+srv://${process.env.USERDB}:${process.env.PASSWORD}@cluster0.ppt3d.mongodb.net/principal?retryWrites=true&w=majority`;
-    
+    const uri:string = process.env.MONGO_URI || `mongodb+srv://juan:${process.env.PASSWORD}@cluster0.ppt3d.mongodb.net/principal?retryWrites=true&w=majority`;
+    console.log(process.env.USERDB)
    const options = {
        autoIndex: false,
        serverSelectionTimeoutMs: 5000,

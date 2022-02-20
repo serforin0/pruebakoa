@@ -19,11 +19,6 @@ const PORT:string = process.env.PORT || `4700`;
 const app = new koa();
 dbConn(); 
 
-app.use(ctx => {
-    ctx.body = 'hello world';
-   
-});
-
 
 app.use(router.allowedMethods());
 app.use(router.routes());
