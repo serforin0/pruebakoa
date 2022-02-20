@@ -1,27 +1,28 @@
 import { Schema, model } from 'mongoose';
 
 
-const host = 'http://www.omdbapi.com/?i=tt3896198&apikey=ad993c69'
-
 interface Movies {
+    // id: number;
     movie: string;
-    find: string;
-    replace: string;
+    author: string;
+    year: string;
     createdAt: Date;
     updatedAt: Date;
 }
 
 const schema = new Schema<Movies>(
     {
+        // id: { type: Number, required: false},
         movie: { type: String, required: true },
-        find: { type: String, required: true },
-        replace: { type: String, required: false},
+        author: { type: String, required: true },
+        year: { type: String, required: true },
+        
         createdAt: Date,
         updatedAt: Date,
     },
     { timestamps: true},
 );
 
-const moviesModule = model<Movies>('Movies', schema);
+const moviesModel = model<Movies>('Movies', schema);
 
-export default moviesModule;
+export default moviesModel;
